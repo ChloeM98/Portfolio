@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body class="light-theme">
+    <!-- User clicks Scripts -->
+    <script src="threex.domevents-master/threex.domevents.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
+    <script>
+      //const domEvents = new THREEx.DomEvents(camera, renderer.domElement);
+    </script>
+
+    <div class="experience">
+      <canvas class="experience-canvas"></canvas>
+    </div>  
+
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader-wrapper">
+        <div class="loading">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page" asscroll-container>
+
+      <div class="toggle-bar">
+        <div class="sun-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="currentColor" d="M11 5V1h2v4Zm6.65 2.75-1.375-1.375 2.8-2.875 1.4 1.425ZM19 13v-2h4v2Zm-8 10v-4h2v4ZM6.35 7.7 3.5 4.925l1.425-1.4L7.75 6.35Zm12.7 12.8-2.775-2.875 1.35-1.35 2.85 2.75ZM1 13v-2h4v2Zm3.925 7.5-1.4-1.425 2.8-2.8.725.675.725.7ZM12 18q-2.5 0-4.25-1.75T6 12q0-2.5 1.75-4.25T12 6q2.5 0 4.25 1.75T18 12q0 2.5-1.75 4.25T12 18Zm0-2q1.65 0 2.825-1.175Q16 13.65 16 12q0-1.65-1.175-2.825Q13.65 8 12 8q-1.65 0-2.825 1.175Q8 10.35 8 12q0 1.65 1.175 2.825Q10.35 16 12 16Zm0-4Z"/></svg>
+        </div>
+        <button class="toggle-button">
+          <div class="toggle-circle"></div>
+        </button>
+        <div class="moon-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="currentColor" d="M12 21q-3.75 0-6.375-2.625T3 12q0-3.75 2.625-6.375T12 3q.35 0 .688.025.337.025.662.075-1.025.725-1.637 1.887Q11.1 6.15 11.1 7.5q0 2.25 1.575 3.825Q14.25 12.9 16.5 12.9q1.375 0 2.525-.613 1.15-.612 1.875-1.637.05.325.075.662Q21 11.65 21 12q0 3.75-2.625 6.375T12 21Zm0-2q2.2 0 3.95-1.212 1.75-1.213 2.55-3.163-.5.125-1 .2-.5.075-1 .075-3.075 0-5.238-2.162Q9.1 10.575 9.1 7.5q0-.5.075-1t.2-1q-1.95.8-3.162 2.55Q5 9.8 5 12q0 2.9 2.05 4.95Q9.1 19 12 19Zm-.25-6.75Z"/></svg>
+        </div>
+      </div>
+
+      <div class="langage-switch">
+        <img class="langage-icon" src="icons/france.png" height="24" width="24" onclick="toggleLanguage('Fr')"></img>
+        <img class="langage-icon" src="icons/uk.png" height="24" width="24" onclick="toggleLanguage('En')"></img>
+      </div>
+
+      <div class="page-wrapper" asscroll>
+
+        <section class="hero">
+          <div class="hero-wrapper">
+
+            <div class="arrow-svg-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24"><path color="currentColor" d="M480 694q-8 0-15-2.5t-13-8.5L267 498q-11-11-10.5-27.5T268 443q11-11 28-11t28 11l156 156 157-157q11-11 27.5-10.5T692 443q11 11 11 28t-11 28L508 683q-6 6-13 8.5t-15 2.5Z"/></svg>
+            </div>
+
+            <div class="hero-main">
+              <h1 id="chloeTitle" class="hero-main-title">Chloé Marcé</h1>
+              <p id="hero-main-description" class="hero-main-description">Ingénieur | VR/AR/3D</p>
+            </div>
+
+            <div class="hero-second">
+              <p class="hero-second-subheading">Chloe Marce</p>
+              <p class="hero-second-subheading">Portfolio</p>
+            </div>
+
+          </div>
+        </section>
+
+        <div class="first-move section-margin"></div>
+        <div id="first-section-scroll"></div>
+
+        <section class="first-section section left">
+          <div class="progress-wrapper progress-bar-wrapper-left">
+            <div class="progress-bar"></div>
+          </div>
+
+          <div class="section-intro-wrapper">
+            <h1 class="section-title">
+              <span id="first-section-title-text" class="section-title-text">À propos de moi</span>
+              <div class="section-title-decoration styleOne"></div>
+              <div class="section-title-decoration styleTwo"></div>
+              <div class="section-title-decoration styleThree"></div>
+            </h1>
+            <span class="section-number">01</span>
+          </div>
+
+          <div class="section-detail-wrapper">
+            <h3 class="section-heading">Profil</h3>
+            <p id="profil-text" class="section-text">Je suis Chloé Marcé. J'ai 24 ans. Je suis ingénieur, diplômée de l'école d'ingénieur généraliste du numérique EFREI Paris. Je suis spécialisée en "Imagerie et Réalité Virtuelle" (3D, AR/VR/MR/XR, web/mobile, UI/UX). </p>
+            <h3 id="skills-title" class="section-heading">Compétences</h3>
+            <p id="skills-text1" class="section-text">Langages : C# / Kotlin / DART (Flutter) / JAVA / Javascript / HTML / CSS / XML / Python / UML / SQL...</p>
+            <p class="section-text">Frameworks : ThreeJS / VueJS / Vuetify ...</p>
+            <p id="skills-text2" class="section-text">Logiciels : Unity (3D, 2D) / Vuforia / Git (GitHub, GitLab; Tortoise, GitKraken) / Jira / Trello / Suite Adobe (Photoshop, Premiere Pro, Illustrator, After Effects)</p>
+            <p class="section-text">IDE : Android Studio / Visual Studio / Netbeans / Code Blocks / IntelliJ... </p>
+            <p id="skills-text3" class="section-text">Langues : Anglais (B2, TOEIC 860), Français (Langue Maternelle, Projet Voltaire 621)</p>
+            <h3 class="section-heading">Contact</h3>
+            <p class="section-text">chloe@marce.fr</p>
+          </div>
+        </section>
+
+        <div class="second-move section-margin"></div>
+        <div id="second-section-scroll"></div>
+
+        <section class="second-section section right">
+          <div class="progress-wrapper progress-bar-wrapper-right">
+            <div class="progress-bar blue-background"></div>
+          </div>
+
+          <div class="section-intro-wrapper blue-text blue-border">
+            <h1 class="section-title blue-text blue-border">
+              <span id="internships-title" class="section-title-text blue-text">Mes stages et projets</span>
+              <div class="section-title-decoration styleOne blue-border"></div>
+              <div class="section-title-decoration styleTwo blue-border"></div>
+              <div class="section-title-decoration styleThree blue-background blue-border"></div>
+            </h1>
+            <span class="section-number blue-text">02</span>
+          </div>
+
+          <div class="section-detail-wrapper">
+            <h3 id="internships-ibm-title" class="section-heading">Stage de fin d'étude - IBM</h3>
+            <p id="internships-ibm-text1" class="section-text">Durant mon stage de fin d'études chez IBM, j'ai développé une application mobile Android de réalité augmentée.</p>
+            <p id="internships-ibm-text2" class="section-text">(Partie mobile : Kotlin sur Android Studio ; Partie AR : Unity 3D, C# et Vuforia).</p>
+            <p id="internships-ibm-text3" class="section-text">Le but de cette application était d'ajouter de l'information à l'écran à partir d'un objet reconnu dans l'environnement réel.</p>
+            <p id="internships-ibm-text4" class="section-text">Pour des raisons de confidentialité, je ne peux pas partager de vidéo de démonstrations.</p>
+            <h3 id="internships-pfe-title" class="section-heading">Projet de fin d'études - FAVR</h3>
+            <p id="internships-pfe-text1" class="section-text">FAVR (First Aid Virtual Reality) est une application d'aide aux gestes de premiers secours en réalité virtuelle. </p>
+            <p id="internships-pfe-text2" class="section-text">Dans ce projet, le "joueur" incarne un étudiant dans une école et va être témoin, dans différentes salles, de différentes situations dans lesquelles une victime nécessite des gestes de premiers secours. Il va ensuite avoir une série de choix à effectuer pour tenter de sauver la victime. Il pourra recommencer jusqu'à avoir fait les bons choix.</p>
+            <p id="internships-pfe-text3" class="section-text">Ce projet a pour but d'apprendre les gestes de premiers secours de manière théorique. Pour ce projet, j'ai utilisé Unity 3D, en C#, et l'Oculus Quest 2. J'ai effectué la création de l'environnement 3D, la gestion des animations (utilisation d'assets pré-créés), le scénario, le gameplay, et les scripts C#.</p>
+            <iframe class= "ytVideo" src="https://www.youtube.com/embed/nfArUiKG3sQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class= "ytVideo" src="https://www.youtube.com/embed/81g8LWIWRls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h3 id="internships-soloso-title" class="section-heading">Stage M1 - SoLoSo</h3>
+            <p id="internships-soloso-text1" class="section-text">Durant mon stage chez SoLoSo, j'ai développé une application mobile (Android & iOS) et web avec Flutter.</p>
+            <p id="internships-soloso-text2" class="section-text">Le but de cette application était de favoriser le commerce de proximité, en mettant en relation les consommateurs avec les commerçants, et en permettant de réaliser des commandes de click & collect.</p>
+            <p id="internships-ibm-text4" class="section-text">Pour des raisons de confidentialité, je ne peux pas partager de vidéo de démonstrations.</p>
+            <h3 id="internships-boss-title" class="section-heading">Projet scolaire - BOSS Fight</h3>
+            <p id="internships-boss-text1" class="section-text">BOSS Fight est un jeu vidéo, créé durant ma dernière année d'étude. Il s'agit d'un combat de boss.</p>
+            <p id="internships-boss-text2" class="section-text">Ici, le joueur doit défier un dragon dans une arène. Il peut se protéger des boules de feu tirées par le dragon à l'aide d'un bouclier ou les esquiver en se téléportant. Il peut également attaquer en lançant des projectiles. Le joueur et le dragon ont des barres de vie, le but étant de tuer le dragon avant de se faire tuer. </p>
+            <p id="internships-boss-text3" class="section-text">Pour ce projet, j'ai utilisé Unity 3D, en C#, et l'Oculus Quest 2. J'ai effectué la création de l'environnement 3D, la gestion des animations (utilisation d'assets pré-créés et d'assets créés par mon binôme sur Blender), le scénario, le gameplay, et les scripts C#.</p>
+            <iframe class= "ytVideo" src="https://www.youtube.com/embed/BCjKBHe8rF8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <div class="third-move section-margin"></div>
+        <div id="third-section-scroll"></div>
+
+        <section class="third-section section right">
+          <div class="progress-wrapper progress-bar-wrapper-right">
+            <div class="progress-bar green-background"></div>
+          </div>
+
+          <div class="section-intro-wrapper green-text green-border">
+            <h1 class="section-title green-text green-border">
+              <span id="asso-title" class="section-title-text green-text">Associatif</span>
+              <div class="section-title-decoration styleOne green-border"></div>
+              <div class="section-title-decoration styleTwo green-border"></div>
+              <div class="section-title-decoration styleThree green-background green-border"></div>
+            </h1>
+            <span class="section-number green-text">03</span>
+          </div>
+
+          <div class="section-detail-wrapper">
+            <h3 id="bde-title" class="section-heading">Pôle vidéo - BDE Efrei "Aftermath"</h3>
+            <p id="bde-text" class="section-text">En tant que membre du pôle vidéo du BDE, j'ai utilisé Premiere Pro (Montage vidéo) et After Effect (Effets spéciaux, tracking) pour la réalisation de nombreuses vidéos. J'ai aussi participé à l'organisation et à la réalisation des tournages et des émissions mensuelles en live, sur Twitch.</p>
+            <iframe class= "ytVideo" src="https://www.youtube.com/embed/htgYJs8LXK4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class= "ytVideo" src="https://www.youtube.com/embed/6UlgkQOFdRI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class= "ytVideo" src="https://www.youtube.com/embed/qhpsnc7N3xE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h3 id="live-title" class="section-heading">Responsable Communication - Live Efrei</h3>
+            <p id="live-text" class="section-text">En tant que responsable communication, durant 3 ans, à Live Efrei (association de musique), j'ai utilisé Photoshop (Graphisme, retouche photo) et Illustrator (Graphisme) pour faire des affiches pour les différents évènements. Je me suis occupée de la gestion des réseaux sociaux (Facebook, Instagram, Discord) pour promouvoir les évènements et communiquer au nom de l'association. J'ai aussi réalisé les vidéos de l'association : Scénario, Organisation, Tournage, Montage (Première Pro).</p>
+            <iframe class= "ytVideo" src="https://www.youtube.com/embed/NZYQyJsENfk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <div class="forth-move section-margin"></div>
+        <div id="forth-section-scroll"></div>
+
+        <section class="forth-section section left">
+          <div class="progress-wrapper progress-bar-wrapper-left">
+            <div class="progress-bar green-background"></div>
+          </div>
+
+          <div class="section-intro-wrapper green-text green-border">
+            <h1 class="section-title green-text green-border">
+              <span id="projects-title" class="section-title-text green-text">Projets personnels et centres d'intérêt</span>
+              <div class="section-title-decoration styleOne green-border"></div>
+              <div class="section-title-decoration styleTwo green-border"></div>
+              <div class="section-title-decoration styleThree green-background green-border"></div>
+            </h1>
+            <span class="section-number green-text">04</span>
+          </div>
+
+          <div class="section-detail-wrapper">
+            <h3 id="unity-title" class="section-heading">Projets Unity</h3>
+            <p id="unity-prj1" class="section-text">Reproduction du jeu Flappy Bird sur PC. Unity 2D, C#.</p>
+            <p id="unity-prj2" class="section-text">Reproduction du jeu "Splashy" pour mobile. Unity 3D, C#.</p>
+            <iframe class= "ytVideo" src="https://www.youtube.com/embed/VHR1BQyWPMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class= "ytVideo" src="https://youtube.com/embed/PM6yI-Kk5mQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h3 id="blender-title" class="section-heading">Projets Blender</h3>
+            <p id="blender-prj1" class="section-text">Quelques créations sur Blender</p>
+            <p id="blender-prj2" class="section-text">Ce site web</p>
+            <img class="image" src="/images/livingroom3Cycle.png"></img>
+            <img class="image" src="/images/CreapyHouse2.jpg"></img>
+            <h3 id="hobbies-title" class="section-heading">Centres d'interêts</h3>
+            <p id="hobbies-text1" class="section-text">Je fais de la Photographie, de la réalisation et du montage vidéo depuis 2013.</p>
+            <p id="hobbies-text2" class="section-text">Je fais de la Batterie depuis 2017.</p>
+            <p id="hobbies-text3" class="section-text">Je fais du ski depuis 2002, et j'ai fait de la compétition entre 2013 et 2018.</p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+
+  <!-- ----------------------Langages Switch------------------- -->
+  <script>
+    function toggleLanguage(language) {
+      let description = document.getElementById("hero-main-description");
+      //let description = document.getElementById("first-section-title-text");
+      
+      if (language === "Fr") {
+        document.getElementById("hero-main-description").innerHTML = "Ingénieur | VR/AR/3D";
+        document.getElementById("first-section-title-text").innerHTML = "À propos de moi";
+        document.getElementById("profil-text").innerHTML = "Je suis Chloé Marcé. J'ai 24 ans. Je suis ingénieur, diplômée de l'école d'ingénieur généraliste du numérique EFREI Paris. Je suis spécialisée en 'Imagerie et Réalité Virtuelle' (3D, AR/VR/MR/XR, web/mobile, UI/UX).";
+        document.getElementById("skills-title").innerHTML = "Compétences";
+        document.getElementById("skills-text1").innerHTML = "Langages : C# / Kotlin / DART (Flutter) / JAVA / Javascript / HTML / CSS / XML / Python / UML / SQL...";
+        document.getElementById("skills-text2").innerHTML = "Logiciels : Unity (3D, 2D) / Vuforia / Git (GitHub, GitLab; Tortoise, GitKraken) / Jira / Trello / Suite Adobe (Photoshop, Premiere Pro, Illustrator, After Effects)";
+        document.getElementById("skills-text3").innerHTML = "Langues : Anglais (B2, TOEIC 860), Français (Langue Maternelle, Projet Voltaire 621)";
+        document.getElementById("internships-title").innerHTML = "Mes stages et projets";
+        document.getElementById("internships-ibm-title").innerHTML = "Stage de fin d'étude - IBM";
+        document.getElementById("internships-ibm-text1").innerHTML = "Durant mon stage de fin d'études chez IBM, j'ai développé une application mobile Android de réalité augmentée.";
+        document.getElementById("internships-ibm-text2").innerHTML = "(Partie mobile : Kotlin sur Android Studio ; Partie AR : Unity 3D, C# et Vuforia).";
+        document.getElementById("internships-ibm-text3").innerHTML = "Le but de cette application était d'ajouter de l'information à l'écran à partir d'un objet reconnu dans l'environnement réel.";
+        document.getElementById("internships-ibm-text4").innerHTML = "Pour des raisons de confidentialité, je ne peux pas partager de vidéo de démonstrations.";
+        document.getElementById("internships-pfe-title").innerHTML = "Projet de fin d'études - FAVR";
+        document.getElementById("internships-pfe-text1").innerHTML = "FAVR (First Aid Virtual Reality) est une application d'aide aux gestes de premiers secours en réalité virtuelle.";
+        document.getElementById("internships-pfe-text2").innerHTML = "Dans ce projet, le 'joueur' incarne un étudiant dans une école et va être témoin, dans différentes salles, de différentes situations dans lesquelles une victime nécessite des gestes de premiers secours. Il va ensuite avoir une série de choix à effectuer pour tenter de sauver la victime. Il pourra recommencer jusqu'à avoir fait les bons choix.";
+        document.getElementById("internships-pfe-text3").innerHTML = "Ce projet a pour but d'apprendre les gestes de premiers secours de manière théorique. Pour ce projet, j'ai utilisé Unity 3D, en C#, et l'Oculus Quest 2. J'ai effectué la création de l'environnement 3D, la gestion des animations (utilisation d'assets pré-créés), le scénario, le gameplay, et les scripts C#.";
+        document.getElementById("internships-soloso-title").innerHTML = "Stage M1 - SoLoSo";
+        document.getElementById("internships-soloso-text1").innerHTML = "Durant mon stage chez SoLoSo, j'ai développé une application mobile (Android & iOS) et web avec Flutter.";
+        document.getElementById("internships-soloso-text2").innerHTML = "Le but de cette application était de favoriser le commerce de proximité, en mettant en relation les consommateurs avec les commerçants, et en permettant de réaliser des commandes de click & collect.";
+        document.getElementById("internships-boss-title").innerHTML = "Projet scolaire - BOSS Fight";
+        document.getElementById("internships-boss-text1").innerHTML = "BOSS Fight est un jeu vidéo, créé durant ma dernière année d'étude. Il s'agit d'un combat de boss.";
+        document.getElementById("internships-boss-text2").innerHTML = "Ici, le joueur doit défier un dragon dans une arène. Il peut se protéger des boules de feu tirées par le dragon à l'aide d'un bouclier ou les esquiver en se téléportant. Il peut également attaquer en lançant des projectiles. Le joueur et le dragon ont des barres de vie, le but étant de tuer le dragon avant de se faire tuer.";
+        document.getElementById("internships-boss-text3").innerHTML = "Pour ce projet, j'ai utilisé Unity 3D, en C#, et l'Oculus Quest 2. J'ai effectué la création de l'environnement 3D, la gestion des animations (utilisation d'assets pré-créés et d'assets créés par mon binôme sur Blender), le scénario, le gameplay, et les scripts C#.";
+        document.getElementById("asso-title").innerHTML = "Associatif";
+        document.getElementById("bde-title").innerHTML = "Pôle vidéo - BDE Efrei 'Aftermath'";
+        document.getElementById("bde-text").innerHTML = "En tant que membre du pôle vidéo du BDE, j'ai utilisé Premiere Pro (Montage vidéo) et After Effect (Effets spéciaux, tracking) pour la réalisation de nombreuses vidéos. J'ai aussi participé à l'organisation et à la réalisation des tournages et des émissions mensuelles en live, sur Twitch.";
+        document.getElementById("live-title").innerHTML = "Responsable Communication - Live Efrei";
+        document.getElementById("live-text").innerHTML = "En tant que responsable communication, durant 3 ans, à Live Efrei (association de musique), j'ai utilisé Photoshop (Graphisme, retouche photo) et Illustrator (Graphisme) pour faire des affiches pour les différents évènements. Je me suis occupée de la gestion des réseaux sociaux (Facebook, Instagram, Discord) pour promouvoir les évènements et communiquer au nom de l'association. J'ai aussi réalisé les vidéos de l'association : Scénario, Organisation, Tournage, Montage (Première Pro).";
+        document.getElementById("projects-title").innerHTML = "Projets personnels et centres d'intérêt";
+        document.getElementById("unity-title").innerHTML = "Projets Unity";
+        document.getElementById("unity-prj1").innerHTML = "Reproduction du jeu Flappy Bird sur PC. Unity 2D, C#.";
+        document.getElementById("unity-prj2").innerHTML = "Reproduction du jeu 'Splashy' pour mobile. Unity 3D, C#.";
+        document.getElementById("blender-title").innerHTML = "Projets Blender";
+        document.getElementById("blender-prj1").innerHTML = "Quelques créations sur Blender";
+        document.getElementById("blender-prj2").innerHTML = "Ce site web";
+        document.getElementById("hobbies-title").innerHTML = "Centres d'interêts";
+        document.getElementById("hobbies-text1").innerHTML = "Je fais de la Photographie, de la réalisation et du montage vidéo depuis 2013.";
+        document.getElementById("hobbies-text2").innerHTML = "Je fais de la Batterie depuis 2017.";
+        document.getElementById("hobbies-text3").innerHTML = "Je fais du ski depuis 2002, et j'ai fait de la compétition entre 2013 et 2018.";
+
+
+      }
+      else {
+        document.getElementById("hero-main-description").innerHTML = "Engineer | VR/AR/3D";
+        document.getElementById("first-section-title-text").innerHTML = "About Me";
+        document.getElementById("profil-text").innerHTML = "I am Chloé Marcé. I'm 24 years old. I am an engineer, graduated from the general digital engineering school EFREI Paris. I am specialized in 'Imagery and Virtual Reality' (3D, AR/VR/MR/XR, web/mobile, UI/UX).";
+        document.getElementById("skills-title").innerHTML = "Skills";
+        document.getElementById("skills-text1").innerHTML = "Languages: C# / Kotlin / DART (Flutter) / JAVA / Javascript / HTML / CSS / XML / Python / UML / SQL...";
+        document.getElementById("skills-text2").innerHTML = "Software: Unity (3D, 2D) / Vuforia / Git (GitHub, GitLab; Tortoise, GitKraken) / Jira / Trello / Adobe Suite (Photoshop, Premiere Pro, Illustrator, After Effects)";
+        document.getElementById("skills-text3").innerHTML = "Languages: English (B2, TOEIC 860), French (Mother tongue, Voltaire Project 621)";
+        document.getElementById("internships-title").innerHTML = "My internships and projects";
+        document.getElementById("internships-ibm-title").innerHTML = "End-of-study internship - IBM";
+        document.getElementById("internships-ibm-text1").innerHTML = "During my end-of-studies internship at IBM, I developed an augmented reality Android mobile application.";
+        document.getElementById("internships-ibm-text2").innerHTML = "(Mobile part: Kotlin on Android Studio; AR part: Unity 3D, C# and Vuforia).";
+        document.getElementById("internships-ibm-text3").innerHTML = "The purpose of this application was to add information to the screen from a recognized object in the real environment.";
+        document.getElementById("internships-ibm-text4").innerHTML = "For confidentiality reasons, I cannot share video demonstrations.";
+        document.getElementById("internships-pfe-title").innerHTML = "Graduation project - FAVR";
+        document.getElementById("internships-pfe-text1").innerHTML = "FAVR (First Aid Virtual Reality) is a virtual reality first aid application.";
+        document.getElementById("internships-pfe-text2").innerHTML = "In this project, the 'player' embodies a student in a school and will witness, in different rooms, different situations in which a victim requires first aid. He will then have a series of choices to make in an attempt to save the victim. He can start again until he has made the right choices.";
+        document.getElementById("internships-pfe-text3").innerHTML = "This project aims to learn first aid gestures in a theoretical way. For this project, I used Unity 3D, in C#, and the Oculus Quest 2. I carried out the creation of the 3D environment, the management of the animations (use of pre-created assets), the scenario, gameplay, and C# scripting.";
+        document.getElementById("internships-soloso-title").innerHTML = "M1 Internship - SoLoSo";
+        document.getElementById("internships-soloso-text1").innerHTML = "During my internship at SoLoSo, I developed a mobile (Android & iOS) and web application with Flutter.";
+        document.getElementById("internships-soloso-text2").innerHTML = "The purpose of this application was to promote local commerce, by connecting consumers with merchants, and by making it possible to carry out click & collect orders.";
+        document.getElementById("internships-boss-title").innerHTML = "School project - BOSS Fight";
+        document.getElementById("internships-boss-text1").innerHTML = "BOSS Fight is a video game, created during my last year of study. This is a boss fight.";
+        document.getElementById("internships-boss-text2").innerHTML = "Here, the player has to challenge a dragon in an arena. He can protect himself from the fireballs fired by the dragon with a shield or dodge them by teleporting. He can also attack by throwing projectiles. Both the player and the dragon have life bars, with the goal being to kill the dragon before they get killed.";
+        document.getElementById("internships-boss-text3").innerHTML = "For this project, I used Unity 3D, in C#, and the Oculus Quest 2. I carried out the creation of the 3D environment, the management of the animations (use of pre-created assets and created assets by my buddy on Blender), the scenario, the gameplay, and the C# scripts.";
+        document.getElementById("asso-title").innerHTML = "Associative";
+        document.getElementById("bde-title").innerHTML = "Video pole - BDE Efrei 'Aftermath'";
+        document.getElementById("bde-text").innerHTML = "As a member of the BDE video department, I used Premiere Pro (video editing) and After Effect (special effects, tracking) for the production of many videos. I also participated in the organization and production of filming and monthly live broadcasts on Twitch.";
+        document.getElementById("live-title").innerHTML = "Communication Manager - Live Efrei";
+        document.getElementById("live-text").innerHTML = "As communication manager, for 3 years, at Live Efrei (music association), I used Photoshop (Graphics, photo editing) and Illustrator (Graphics) to make posters for different events. I took care of the management of social networks (Facebook, Instagram, Discord) to promote events and communicate on behalf of the association. I also produced the association's videos: Scenario, Organization, Filming, Editing (Première Pro).";
+        document.getElementById("projects-title").innerHTML = "Personal projects and interests";
+        document.getElementById("unity-title").innerHTML = "Unity projects";
+        document.getElementById("unity-prj1").innerHTML = "Reproduction of Flappy Bird game on PC. Unity 2D, C#.";
+        document.getElementById("unity-prj2").innerHTML = "Reproduction of the game 'Splashy' for mobile. Unity 3D, C#.";
+        document.getElementById("blender-title").innerHTML = "Blender projects";
+        document.getElementById("blender-prj1").innerHTML = "Some creations on Blender";
+        document.getElementById("blender-prj2").innerHTML = "This website";
+        document.getElementById("hobbies-title").innerHTML = "Hobbies";
+        document.getElementById("hobbies-text1").innerHTML = "I have been doing photography, directing and video editing since 2013.";
+        document.getElementById("hobbies-text2").innerHTML = "I have been drumming since 2017.";
+        document.getElementById("hobbies-text3").innerHTML = "I have been skiing since 2002, and I competed between 2013 and 2018.";
+        
+      
+      }
+    }
+  </script>
+</html>
